@@ -4,8 +4,6 @@
  */
 package controller;
 
-import model.Comanda;
-
 /**
  * @author GuillermoRojoSantos
  * @author AlejandroMarínBermúd

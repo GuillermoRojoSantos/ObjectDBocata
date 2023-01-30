@@ -8,8 +8,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 /**
- *
  * @author AlejandroMarínBermúd
+ * @author GuillermoRojoSantos
  */
 public class ObjectDBUtil {
     

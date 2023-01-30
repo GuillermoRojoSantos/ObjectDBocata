@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
 import model.Comanda;
 
 /**
- *
  * @author AlejandroMarínBermúd
+ * @author GuillermoRojoSantos
  */
 public class ComandaDAODB implements ComandaDAO {
     
@@ -39,10 +39,12 @@ public class ComandaDAODB implements ComandaDAO {
         }
         System.out.println("Introduzca el id del producto");
         int id = sc.nextInt();//this next is so the nextInt gets ''correctly closed''
+        
         //problema aqui vvv
         c.setProducto(prod.getNombreProducto(id));
         c.setPrecio(prod.getPrecio(id));
         // Problema aqui ^^^
+        
         c.setEstado("PENDIENTE");
         
         var em = ObjectDBUtil.getEntityManagerFactory().createEntityManager();
@@ -71,7 +73,6 @@ public class ComandaDAODB implements ComandaDAO {
 
     @Override
     public void markPedido() {
-        
         var sci = new Scanner(System.in);
         pedidoMarcadoList();
         System.out.println();
@@ -143,9 +144,9 @@ public class ComandaDAODB implements ComandaDAO {
     public void pedidoMarcadoList() {
         ArrayList<Comanda> salida;
         var em = ObjectDBUtil.getEntityManagerFactory().createEntityManager();
-        TypedQuery<Comanda> c = (TypedQuery<Comanda>) em.createQuery("select c from Comanda c where Estado = :estado", Comanda.class);
+        TypedQuery<Comanda> c = (TypedQuery<Comanda>) em.createQuery("select c from Comanda c where Estado= :estado", Comanda.class);
        
-        c.setParameter("estado","PRNDIENTE");
+        c.setParameter("estado","PENDIENTE");
         
         salida = (ArrayList<Comanda>) c.getResultList();
         var df = new DecimalFormat("#.##");

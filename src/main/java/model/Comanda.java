@@ -5,8 +5,8 @@
 package model;
 
 /**
- *
  * @author AlejandroMarínBermúd
+ * @author GuillermoRojoSantos
  */
 
 import javax.persistence.*;

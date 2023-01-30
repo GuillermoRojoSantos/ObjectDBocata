@@ -11,8 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- *
  * @author AlejandroMarínBermúd
+ * @author GuillermoRojoSantos
  */
 @Entity
 @Table (name="bocadillos")

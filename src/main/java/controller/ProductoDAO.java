@@ -5,8 +5,8 @@
 package controller;
 
 /**
- *
  * @author AlejandroMarínBermúd
+ * @author GuillermoRojoSantos
  */
 public interface ProductoDAO {
     

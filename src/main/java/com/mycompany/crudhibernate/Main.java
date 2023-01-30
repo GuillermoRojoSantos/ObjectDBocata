@@ -2,9 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.crudodb;
+package com.mycompany.crudhibernate;
 
+import controller.ComandaDAO;
 import controller.ComandaDAODB;
+import controller.ProductoDAO;
 import controller.ProductoDAODB;
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -17,8 +19,8 @@ public class Main {
     public static void main(String[] args) {
         int option = 0;
         var sc = new Scanner(System.in);
-        ComandaDAODB cbh = new ComandaDAODB();
-        ProductoDAODB pdh = new ProductoDAODB();
+        ComandaDAO cbh = new ComandaDAODB();
+        ProductoDAO pdh = new ProductoDAODB();
         //two uniques instances of ComandaDAOHib and ProductoDAOHib for better performance and cleaner code
         String currentDate=String.valueOf(LocalDate.now());
         //currentDate is taken from system's current date with class LocalDate to later be used in methods needing
